@@ -45,51 +45,51 @@ def cambiar_dificultad(d):
 def free():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            crash = True
-        if (event.type == KEYDOWN and event.key == K_q):
-            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68437__pinkyfinger__piano-a.wav")
-            pygame.mixer.music.play()
-            pygame.event.wait()
 
-        if (event.type == KEYDOWN and event.key == K_w):
-            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68439__pinkyfinger__piano-bb.wav")
-            pygame.mixer.music.play()
-            pygame.event.wait()
+            if (event.type == KEYDOWN and event.key == K_q):
+                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68437__pinkyfinger__piano-a.wav")
+                pygame.mixer.music.play()
+                pygame.event.wait()
 
-        if (event.type == KEYDOWN and event.key == K_e):
-            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68438__pinkyfinger__piano-b.wav")
-            pygame.mixer.music.play()
-            pygame.event.wait()
+            if (event.type == KEYDOWN and event.key == K_w):
+                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68439__pinkyfinger__piano-bb.wav")
+                pygame.mixer.music.play()
+                pygame.event.wait()
 
-        if (event.type == KEYDOWN and event.key == K_r):
-            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68441__pinkyfinger__piano-c.wav")
-            pygame.mixer.music.play()
-            pygame.event.wait()
+            if (event.type == KEYDOWN and event.key == K_e):
+                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68438__pinkyfinger__piano-b.wav")
+                pygame.mixer.music.play()
+                pygame.event.wait()
 
-        if (event.type == KEYDOWN and event.key == K_t):
-            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68440__pinkyfinger__piano-c.wav")
-            pygame.mixer.music.play()
-            pygame.event.wait()
+            if (event.type == KEYDOWN and event.key == K_r):
+                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68441__pinkyfinger__piano-c.wav")
+                pygame.mixer.music.play()
+                pygame.event.wait()
 
-        if (event.type == KEYDOWN and event.key == K_y):
-            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68442__pinkyfinger__piano-d.wav")
-            pygame.mixer.music.play()
-            pygame.event.wait()
+            if (event.type == KEYDOWN and event.key == K_t):
+                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68440__pinkyfinger__piano-c.wav")
+                pygame.mixer.music.play()
+                pygame.event.wait()
 
-        if (event.type == KEYDOWN and event.key == K_u):
-            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68444__pinkyfinger__piano-eb.wav")
-            pygame.mixer.music.play()
-            pygame.event.wait()
+            if (event.type == KEYDOWN and event.key == K_y):
+                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68442__pinkyfinger__piano-d.wav")
+                pygame.mixer.music.play()
+                pygame.event.wait()
 
-        if (event.type == KEYDOWN and event.key == K_i):
-            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68443__pinkyfinger__piano-e.wav")
-            pygame.mixer.music.play()
-            pygame.event.wait()
+            if (event.type == KEYDOWN and event.key == K_u):
+                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68444__pinkyfinger__piano-eb.wav")
+                pygame.mixer.music.play()
+                pygame.event.wait()
 
-        if (event.type == KEYDOWN and event.key == K_o):
-            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68445__pinkyfinger__piano-f.wav")
-            pygame.mixer.music.play()
-            pygame.event.wait()
+            if (event.type == KEYDOWN and event.key == K_i):
+                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68443__pinkyfinger__piano-e.wav")
+                pygame.mixer.music.play()
+                pygame.event.wait()
+
+            if (event.type == KEYDOWN and event.key == K_o):
+                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68445__pinkyfinger__piano-f.wav")
+                pygame.mixer.music.play()
+                pygame.event.wait()
 
 
 def jugar(dificultadasa, fuente_letra):
