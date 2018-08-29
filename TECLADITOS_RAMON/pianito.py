@@ -91,7 +91,6 @@ def free():
                 pygame.mixer.music.play()
                 pygame.event.wait()
 
-
 def jugar(dificultadasa, fuente_letra):
     difficulty = dificultadasa[0]
     assert isinstance(difficulty, str)
@@ -172,7 +171,7 @@ menu_jugar_free = pygameMenu.Menu(gameDisplay,
                                  window_width=display_size[0]
 
                                  )
-menu_jugar_free.add_option('Jugar', jugar, dificultad,
+menu_jugar_free.add_option('Jugar', free,
                           pygame.font.Font(pygameMenu.fonts.FONT_FRANCHISE, 30))
 menu_jugar_free.add_option('Volver al Menu Principal', PYGAME_MENU_BACK)
 
@@ -199,9 +198,10 @@ menu_pricipal.add_option('EXIT', PYGAME_MENU_EXIT)
 #MAIN
 
 while True:
-
-    gameDisplay.fill(blue)
-    Titulo = pygame.font.Font('freesansbold.ttf',115)
-    clock.tick(60)
-    menu_pricipal.mainloop(event)
-    pygame.display.flip()
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            gameDisplay.fill(blue)
+            Titulo = pygame.font.Font('freesansbold.ttf',115)
+            clock.tick(60)
+            menu_pricipal.mainloop(event)
+            pygame.display.flip()
