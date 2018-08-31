@@ -1,7 +1,3 @@
-from random import randrange
-import datetime
-import os
-import sys
 import pygame
 from pygame.locals import *
 import pygameMenu
@@ -21,11 +17,9 @@ FPS = 60.0
 
 white = (255, 255, 255)
 black = (0, 0, 0)
-red = (255, 0, 0)
 purple = (255,0,255)
 blue = (0,255,255)
 
-crash = False
 menu = True
 
 gameDisplay = pygame.display.set_mode((display_size))
@@ -43,55 +37,75 @@ def cambiar_dificultad(d):
     dificultad[0] = d
 
 def free():
+
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+        if (event.type == KEYDOWN and event.key == K_q):
+            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68437__pinkyfinger__piano-a.wav")
+            pygame.mixer.music.play()
+            pygame.event.wait()
 
-            if (event.type == KEYDOWN and event.key == K_q):
-                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68437__pinkyfinger__piano-a.wav")
-                pygame.mixer.music.play()
-                pygame.event.wait()
+        elif (event.type == KEYDOWN and event.key == K_w):
+            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68439__pinkyfinger__piano-bb.wav")
+            pygame.mixer.music.play()
+            pygame.event.wait()
 
-            if (event.type == KEYDOWN and event.key == K_w):
-                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68439__pinkyfinger__piano-bb.wav")
-                pygame.mixer.music.play()
-                pygame.event.wait()
+        elif (event.type == KEYDOWN and event.key == K_e):
+            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68438__pinkyfinger__piano-b.wav")
+            pygame.mixer.music.play()
+            pygame.event.wait()
 
-            if (event.type == KEYDOWN and event.key == K_e):
-                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68438__pinkyfinger__piano-b.wav")
-                pygame.mixer.music.play()
-                pygame.event.wait()
+        elif (event.type == KEYDOWN and event.key == K_r):
+            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68441__pinkyfinger__piano-c.wav")
+            pygame.mixer.music.play()
+            pygame.event.wait()
 
-            if (event.type == KEYDOWN and event.key == K_r):
-                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68441__pinkyfinger__piano-c.wav")
-                pygame.mixer.music.play()
-                pygame.event.wait()
+        elif (event.type == KEYDOWN and event.key == K_t):
+            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68440__pinkyfinger__piano-c.wav")
+            pygame.mixer.music.play()
+            pygame.event.wait()
 
-            if (event.type == KEYDOWN and event.key == K_t):
-                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68440__pinkyfinger__piano-c.wav")
-                pygame.mixer.music.play()
-                pygame.event.wait()
+        elif (event.type == KEYDOWN and event.key == K_y):
+            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68442__pinkyfinger__piano-d.wav")
+            pygame.mixer.music.play()
+            pygame.event.wait()
 
-            if (event.type == KEYDOWN and event.key == K_y):
-                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68442__pinkyfinger__piano-d.wav")
-                pygame.mixer.music.play()
-                pygame.event.wait()
+        elif (event.type == KEYDOWN and event.key == K_u):
+            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68444__pinkyfinger__piano-eb.wav")
+            pygame.mixer.music.play()
+            pygame.event.wait()
 
-            if (event.type == KEYDOWN and event.key == K_u):
-                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68444__pinkyfinger__piano-eb.wav")
-                pygame.mixer.music.play()
-                pygame.event.wait()
+        elif (event.type == KEYDOWN and event.key == K_i):
+            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68443__pinkyfinger__piano-e.wav")
+            pygame.mixer.music.play()
+            pygame.event.wait()
 
-            if (event.type == KEYDOWN and event.key == K_i):
-                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68443__pinkyfinger__piano-e.wav")
-                pygame.mixer.music.play()
-                pygame.event.wait()
+        elif (event.type == KEYDOWN and event.key == K_o):
+            pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68445__pinkyfinger__piano-f.wav")
+            pygame.mixer.music.play()
+            pygame.event.wait()
 
-            if (event.type == KEYDOWN and event.key == K_o):
-                pygame.mixer.music.load("/home/alumno/PycharmProjects/R&N/68445__pinkyfinger__piano-f.wav")
-                pygame.mixer.music.play()
-                pygame.event.wait()
+
+    while True:
+
+        clock.tick(60)
+
+        playevents = pygame.event.get()
+        for e in playevents:
+            if e.type == QUIT:
+                exit()
+            elif e.type == KEYDOWN:
+                if e.key == K_ESCAPE:
+                    if menu_pricipal.is_disabled():
+                        menu_pricipal.enable()
+                        return
+
+        menu_pricipal.mainloop(playevents)
+        gameDisplay.fill(blue)
+        pygame.display.flip()
+
 
 def jugar(dificultadasa, fuente_letra):
+
     difficulty = dificultadasa[0]
     assert isinstance(difficulty, str)
 
@@ -105,8 +119,7 @@ def jugar(dificultadasa, fuente_letra):
     f_width = f.get_size()[0]
 
 
-    while not crash:
-
+    while True:
 
         clock.tick(60)
 
@@ -127,8 +140,6 @@ def jugar(dificultadasa, fuente_letra):
         pygame.display.flip()
 
 
-
-
 menu_jugar_dif = pygameMenu.Menu(gameDisplay,
                                  bgfun=fondo,
                                  color_selected=purple,
@@ -141,18 +152,18 @@ menu_jugar_dif = pygameMenu.Menu(gameDisplay,
                                  menu_width=int(display_size[0] * 0.6),
                                  onclose=PYGAME_MENU_DISABLE_CLOSE,
                                  option_shadow=False,
-                                 title='Menu del Juego',
+                                 title='MENU   DEL   JUEGO',
                                  window_height=display_size[1],
                                  window_width=display_size[0]
                                  )
-menu_jugar_dif.add_option('Jugar', jugar, dificultad,
+menu_jugar_dif.add_option('JUGAR', jugar, dificultad,
                           pygame.font.Font(pygameMenu.fonts.FONT_FRANCHISE, 30))
-menu_jugar_dif.add_selector('Seleccione Dificultad', [('Facil', 'Facil'),
-                                                      ('Medio', 'Medio'),
-                                                      ('Dificil', 'Dificil')],
+menu_jugar_dif.add_selector('SELECCIONE DIFICULTAD', [('FACIL', 'Facil'),
+                                                      ('MEDIO', 'Medio'),
+                                                      ('DIFICIL', 'Dificil')],
                             onreturn=None,
                             onchange=cambiar_dificultad)
-menu_jugar_dif.add_option('Volver al Menu Principal', PYGAME_MENU_BACK)
+menu_jugar_dif.add_option('VOLVER AL MENU PRINCIPAL', PYGAME_MENU_BACK)
 
 menu_jugar_free = pygameMenu.Menu(gameDisplay,
                                  bgfun=fondo,
@@ -166,14 +177,13 @@ menu_jugar_free = pygameMenu.Menu(gameDisplay,
                                  menu_width=int(display_size[0] * 0.6),
                                  onclose=PYGAME_MENU_DISABLE_CLOSE,
                                  option_shadow=False,
-                                 title='Menu de Freeplay',
+                                 title='MENU   DE   FREEPLAY',
                                  window_height=display_size[1],
                                  window_width=display_size[0]
 
                                  )
-menu_jugar_free.add_option('Jugar', free,
-                          pygame.font.Font(pygameMenu.fonts.FONT_FRANCHISE, 30))
-menu_jugar_free.add_option('Volver al Menu Principal', PYGAME_MENU_BACK)
+menu_jugar_free.add_option('JUGAR', free)
+menu_jugar_free.add_option('VOLVER AL MENU PRINCIPAL', PYGAME_MENU_BACK)
 
 menu_pricipal = pygameMenu.Menu(gameDisplay,
                                 bgfun=fondo,
@@ -187,7 +197,7 @@ menu_pricipal = pygameMenu.Menu(gameDisplay,
                                 menu_width=int(display_size[0] * 0.6),
                                 onclose=PYGAME_MENU_DISABLE_CLOSE,
                                 option_shadow=False,
-                                title='Menu Principal',
+                                title='MENU   PRINCIPAL',
                                 window_height=display_size[1],
                                 window_width=display_size[0]
                                 )
