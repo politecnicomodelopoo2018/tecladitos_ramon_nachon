@@ -132,19 +132,24 @@ def comenzar_nuevo_juego():
     pygame.display.flip()
     pygame.time.delay(10)
 
-    sound = pygame.mixer.Sound("/home/alumno/Escritorio/39202__jobro__piano-ff-054.wav")
-    sound1 = pygame.mixer.Sound("/home/alumno/Escritorio/39203__jobro__piano-ff-055.wav")
-    sound2 = pygame.mixer.Sound("/home/alumno/Escritorio/39204__jobro__piano-ff-056.wav")
-    sound3 = pygame.mixer.Sound("/home/alumno/Escritorio/39205__jobro__piano-ff-057.wav")
-    sound4 = pygame.mixer.Sound("/home/alumno/Escritorio/39206__jobro__piano-ff-058.wav")
-    sound5 = pygame.mixer.Sound("/home/alumno/Escritorio/39207__jobro__piano-ff-059.wav")
-    sound6 = pygame.mixer.Sound("/home/alumno/Escritorio/39208__jobro__piano-ff-060.wav")
-    sound7 = pygame.mixer.Sound("/home/alumno/Escritorio/39209__jobro__piano-ff-061.wav")
+    sound = pygame.mixer.Sound("/home/alumno/Escritorio/piano/c1.wav")
+    sound1 = pygame.mixer.Sound("/home/alumno/Escritorio/piano/c1s.wav")
+    sound2 = pygame.mixer.Sound("/home/alumno/Escritorio/piano/d1.wav")
+    sound3 = pygame.mixer.Sound("/home/alumno/Escritorio/piano/d1s.wav")
+    sound4 = pygame.mixer.Sound("/home/alumno/Escritorio/piano/e1.wav")
+    sound5 = pygame.mixer.Sound("/home/alumno/Escritorio/piano/f1.wav")
+    sound6 = pygame.mixer.Sound("/home/alumno/Escritorio/piano/f1s.wav")
+    sound7 = pygame.mixer.Sound("/home/alumno/Escritorio/piano/g1.wav")
+    sound8 = pygame.mixer.Sound("/home/alumno/Escritorio/piano/g1s.wav")
+    sound9 = pygame.mixer.Sound("/home/alumno/Escritorio/piano/a1.wav")
+    sound10 = pygame.mixer.Sound("/home/alumno/Escritorio/piano/a1s.wav")
+    sound11 = pygame.mixer.Sound("/home/alumno/Escritorio/piano/b1.wav")
+
 
 
     while True:
         for event in pygame.event.get():
-            if (event.type == KEYDOWN and event.key == K_q):
+            if (event.type == KEYDOWN and event.key == K_z):
                 fondo = pygame.image.load("Letras/Q.jpg").convert()
                 screen.blit(fondo, (0, 0))
                 pygame.display.flip()
@@ -157,7 +162,7 @@ def comenzar_nuevo_juego():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
-            elif (event.type == KEYDOWN and event.key == K_w):
+            elif (event.type == KEYDOWN and event.key == K_s):
                 fondo = pygame.image.load("Letras/W.jpg").convert()
                 screen.blit(fondo, (0, 0))
                 pygame.display.flip()
@@ -170,7 +175,7 @@ def comenzar_nuevo_juego():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
-            elif (event.type == KEYDOWN and event.key == K_e):
+            elif (event.type == KEYDOWN and event.key == K_x):
                 fondo = pygame.image.load("Letras/E.jpg").convert()
                 screen.blit(fondo, (0, 0))
                 pygame.display.flip()
@@ -183,7 +188,7 @@ def comenzar_nuevo_juego():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
-            elif (event.type == KEYDOWN and event.key == K_r):
+            elif (event.type == KEYDOWN and event.key == K_d):
                 fondo = pygame.image.load("Letras/R.jpg").convert()
                 screen.blit(fondo, (0, 0))
                 pygame.display.flip()
@@ -196,7 +201,7 @@ def comenzar_nuevo_juego():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
-            elif (event.type == KEYDOWN and event.key == K_t):
+            elif (event.type == KEYDOWN and event.key == K_c):
                 fondo = pygame.image.load("Letras/T.jpg").convert()
                 screen.blit(fondo, (0, 0))
                 pygame.display.flip()
@@ -209,12 +214,16 @@ def comenzar_nuevo_juego():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
-            elif (event.type == KEYDOWN and event.key == K_y):
+            elif (event.type == KEYDOWN and event.key == K_v):
 
                 sound5.play()
 
+                fondo = pygame.image.load("pianito.jpg").convert()
+                screen.blit(fondo, (0, 0))
+                pygame.display.flip()
+                pygame.time.delay(10)
 
-            elif (event.type == KEYDOWN and event.key == K_u):
+            elif (event.type == KEYDOWN and event.key == K_g):
 
                 sound6.play()
 
@@ -223,7 +232,7 @@ def comenzar_nuevo_juego():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
-            elif (event.type == KEYDOWN and event.key == K_i):
+            elif (event.type == KEYDOWN and event.key == K_b):
 
                 sound7.play()
 
@@ -232,35 +241,36 @@ def comenzar_nuevo_juego():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
-            elif (event.type == KEYDOWN and event.key == K_o):
+            elif (event.type == KEYDOWN and event.key == K_h):
 
-
-
-                fondo = pygame.image.load("pianito.jpg").convert()
-                screen.blit(fondo, (0, 0))
-                pygame.display.flip()
-                pygame.time.delay(10)
-
-            elif (event.type == KEYDOWN and event.key == K_p):
-
-
+                sound8.play()
 
                 fondo = pygame.image.load("pianito.jpg").convert()
                 screen.blit(fondo, (0, 0))
                 pygame.display.flip()
                 pygame.time.delay(10)
 
-            elif (event.type == KEYDOWN and event.key == K_PLUS):
+            elif (event.type == KEYDOWN and event.key == K_n):
 
+                sound9.play()
 
                 fondo = pygame.image.load("pianito.jpg").convert()
                 screen.blit(fondo, (0, 0))
                 pygame.display.flip()
                 pygame.time.delay(10)
 
+            elif (event.type == KEYDOWN and event.key == K_j):
 
-            elif (event.type == KEYDOWN and event.key == K_BACKQUOTE):
+                sound10.play()
 
+                fondo = pygame.image.load("pianito.jpg").convert()
+                screen.blit(fondo, (0, 0))
+                pygame.display.flip()
+                pygame.time.delay(10)
+
+            elif (event.type == KEYDOWN and event.key == K_m):
+
+                sound11.play()
 
                 fondo = pygame.image.load("pianito.jpg").convert()
                 screen.blit(fondo, (0, 0))
