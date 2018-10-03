@@ -1,7 +1,12 @@
-import pygame, sys
+import pygame
+from menu.PyMySQL import DB
 from pygame.locals import *
 
 
+#cuando inicia el programa que pueda seleccionar la cancion
+#cuando termine la partida se le pide el nombre y se guarda el highscore
+#modo grabación de nivel
+#
 pygame.mixer.pre_init(44100, -16,1,1024)
 pygame.init()
 
@@ -289,16 +294,24 @@ def comenzar_nuevo_juego():
 
 
 
-def mostrar_opciones():
+def niveles():
     pygame.font.init()
     screen = pygame.display.set_mode((800, 600))
     fondo = pygame.image.load("pianito.jpg").convert()
 
-    clock = pygame.time.Clock()
+    cancion_tocada = ""
+
+    cursor.execute(56)
+
+    i = 0
+
+    nivel = 4
 
     screen.blit(fondo, (0, 0))
     pygame.display.flip()
     pygame.time.delay(10)
+
+    cancion_chota = "zsxd"
 
     sound = pygame.mixer.Sound("/home/alumno/Escritorio/piano/c1.wav")
     sound1 = pygame.mixer.Sound("/home/alumno/Escritorio/piano/c1s.wav")
@@ -315,7 +328,7 @@ def mostrar_opciones():
 
 
 
-    while True:
+    while i < nivel:
         for event in pygame.event.get():
             if (event.type == KEYDOWN and event.key == K_z):
                 fondo = pygame.image.load("Letras/Q.jpg").convert()
@@ -330,6 +343,10 @@ def mostrar_opciones():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
+                cancion_tocada = str(cancion_tocada) + 'z'
+
+                i = i + 1
+
             elif (event.type == KEYDOWN and event.key == K_s):
                 fondo = pygame.image.load("Letras/W.jpg").convert()
                 screen.blit(fondo, (0, 0))
@@ -342,6 +359,10 @@ def mostrar_opciones():
                 screen.blit(fondo, (0, 0))
                 pygame.display.flip()
                 pygame.time.delay(10)
+
+                cancion_tocada = str(cancion_tocada) + 's'
+
+                i = i + 1
 
             elif (event.type == KEYDOWN and event.key == K_x):
                 fondo = pygame.image.load("Letras/E.jpg").convert()
@@ -356,6 +377,10 @@ def mostrar_opciones():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
+                cancion_tocada = str(cancion_tocada) + 'x'
+
+                i = i + 1
+
             elif (event.type == KEYDOWN and event.key == K_d):
                 fondo = pygame.image.load("Letras/R.jpg").convert()
                 screen.blit(fondo, (0, 0))
@@ -368,6 +393,10 @@ def mostrar_opciones():
                 screen.blit(fondo, (0, 0))
                 pygame.display.flip()
                 pygame.time.delay(10)
+
+                cancion_tocada = str(cancion_tocada) + 'd'
+
+                i = i + 1
 
             elif (event.type == KEYDOWN and event.key == K_c):
                 fondo = pygame.image.load("Letras/T.jpg").convert()
@@ -382,6 +411,10 @@ def mostrar_opciones():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
+                cancion_tocada = str(cancion_tocada) + 'c'
+
+                i = i + 1
+
             elif (event.type == KEYDOWN and event.key == K_v):
 
                 sound5.play()
@@ -390,6 +423,10 @@ def mostrar_opciones():
                 screen.blit(fondo, (0, 0))
                 pygame.display.flip()
                 pygame.time.delay(10)
+
+                cancion_tocada = str(cancion_tocada) + 'y'
+
+                i = i + 1
 
             elif (event.type == KEYDOWN and event.key == K_g):
 
@@ -400,6 +437,10 @@ def mostrar_opciones():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
+                cancion_tocada = str(cancion_tocada) + 'g'
+
+                i = i + 1
+
             elif (event.type == KEYDOWN and event.key == K_b):
 
                 sound7.play()
@@ -408,6 +449,10 @@ def mostrar_opciones():
                 screen.blit(fondo, (0, 0))
                 pygame.display.flip()
                 pygame.time.delay(10)
+
+                cancion_tocada = str(cancion_tocada) + 'b'
+
+                i = i + 1
 
             elif (event.type == KEYDOWN and event.key == K_h):
 
@@ -418,6 +463,10 @@ def mostrar_opciones():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
+                cancion_tocada = str(cancion_tocada) + 'h'
+
+                i = i + 1
+
             elif (event.type == KEYDOWN and event.key == K_n):
 
                 sound9.play()
@@ -426,6 +475,10 @@ def mostrar_opciones():
                 screen.blit(fondo, (0, 0))
                 pygame.display.flip()
                 pygame.time.delay(10)
+
+                cancion_tocada = str(cancion_tocada) + 'n'
+
+                i = i + 1
 
             elif (event.type == KEYDOWN and event.key == K_j):
 
@@ -436,6 +489,10 @@ def mostrar_opciones():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
+                cancion_tocada = str(cancion_tocada) + 'j'
+
+                i = i + 1
+
             elif (event.type == KEYDOWN and event.key == K_m):
 
                 sound11.play()
@@ -445,13 +502,26 @@ def mostrar_opciones():
                 pygame.display.flip()
                 pygame.time.delay(10)
 
+                cancion_tocada = str(cancion_tocada) + 'm'
+
+                i = i + 1
+
 
             elif (event.type == KEYDOWN and event.key == K_ESCAPE):
                 import sys
                 print(" GGracias por utilizar Tecladitos Ramon-Nachon.")
                 sys.exit(0)
 
-        clock.tick(60)
+
+    if cancion_tocada == cancion_chota:
+        print("Ganaste Maestro")
+        print(cancion_tocada)
+    else:
+        print("u mom gay")
+        print(cancion_tocada)
+
+
+
 
 def creditos():
     print ("Este maravilloso juego fue creado por los mismisimos RAMON & NACHON.")
@@ -470,7 +540,7 @@ if __name__ == '__main__':
     salir = False
     opciones = [
         ("Freeplay", comenzar_nuevo_juego),
-        ("Levels", mostrar_opciones),
+        ("Levels", niveles),
         ("Creditos", creditos),
         ("Salir", salir_del_programa)
         ]
