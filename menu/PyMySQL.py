@@ -2,11 +2,11 @@ import pymysql
 
 class DB ():
     @staticmethod
-    def run (query):
+    def run(query):
         db = pymysql.connect (host='127.0.0.1',
                               user='root',
                               passwd='alumno',
-                              db='TECLADITOS R&N',
+                              db='mydb',
                               charset='utf8',
                               autocommit=True)
 
@@ -15,3 +15,4 @@ class DB ():
         db.close()
 
         return cursor
+
